@@ -1,0 +1,23 @@
+version = 0.1
+[default.pipeline_bootstrap.parameters]
+oidc_provider_url = "https://token.actions.githubusercontent.com"
+oidc_client_id = "sts.amazonaws.com"
+github_org = "matze1113"
+github_repo = "matzes-app"
+deployment_branch = "main"
+oidc_provider = "github-actions"
+permissions_provider = "OpenID Connect (OIDC)"
+
+[dev.pipeline_bootstrap.parameters]
+pipeline_execution_role = "arn:aws:iam::681823871690:role/aws-sam-cli-managed-dev-pipel-PipelineExecutionRole-FNX1AKWsswJV"
+cloudformation_execution_role = "arn:aws:iam::681823871690:role/aws-sam-cli-managed-dev-p-CloudFormationExecutionRo-UQfoRDSb96eh"
+artifacts_bucket = "aws-sam-cli-managed-dev-pipeline-artifactsbucket-891jx9isz7yd"
+image_repository = "681823871690.dkr.ecr.eu-central-1.amazonaws.com/aws-sam-cli-managed-dev-pipeline-resources-imagerepository-z7e8xop7jvsi"
+region = "eu-central-1"
+
+[prod.pipeline_bootstrap.parameters]
+pipeline_execution_role = "arn:aws:iam::681823871690:role/aws-sam-cli-managed-prod-pipe-PipelineExecutionRole-wf6EiQmoqhty"
+cloudformation_execution_role = "arn:aws:iam::681823871690:role/aws-sam-cli-managed-prod--CloudFormationExecutionRo-xiXAPe8Y8RRc"
+artifacts_bucket = "aws-sam-cli-managed-prod-pipeline-artifactsbucket-lbup8wck4try"
+image_repository = "681823871690.dkr.ecr.eu-central-1.amazonaws.com/aws-sam-cli-managed-prod-pipeline-resources-imagerepository-5amtormygu7r"
+region = "eu-central-1"
